@@ -74,6 +74,18 @@ php artisan serve
 npm run dev
 ```
 
+## Usuários para Demonstração
+
+### Email
+
+Cliente -> user@user.com
+Administrador -> admin@admin.com
+SysAdmin -> sysadmin@admin.com
+
+### Senha
+
+As senhas dos 3 usuários são por padrão: Aa123456
+
 ## Estrutura de Permissões
 
 | Perfil        | Permissões                                               |
