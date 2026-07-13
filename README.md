@@ -33,7 +33,7 @@ O projeto também foi utilizado como forma de aprofundar conhecimentos em desenv
 Clone o repositório:
 
 ```bash
-git clone https://github.com/seu-usuario/BrilhaAuto.git
+git clone https://github.com/LuizDevpro/BrilhaAuto.git
 ```
 
 Acesse a pasta do projeto:
@@ -78,9 +78,9 @@ npm run dev
 
 ### Email
 
-Cliente -> user@user.com
-Administrador -> admin@admin.com
-SysAdmin -> sysadmin@admin.com
+Cliente -> user@user.com<br>
+Administrador -> admin@admin.com<br>
+SysAdmin -> sysadmin@admin.com<br>
 
 ### Senha
 
