@@ -81,6 +81,7 @@ class AdminController extends Controller
 
         $appointment->update([
             'status' => 'agendado',
+            'started_at' => null
         ]);
 
         return back();

@@ -5,11 +5,8 @@
         <div class="input-card w-full max-w-md sm:max-w-lg p-3 sm:p-4">
 
             <div class="flex justify-center items-center mb-1 gap-2">
-                <img src="{{ asset('assets/images/logo.jpg') }}" alt="Logo"
-                    class="h-8 w-8 sm:h-9 sm:w-9 rounded-full object-cover select-none">
-                <p class="text-red-700 text-lg sm:text-xl italic font-extrabold">
-                    {{ env('APP_NAME') }}
-                </p>
+                <img src="{{ asset('assets/images/logo_texto.png') }}" alt="Logo"
+                    class="h-15 w-80 object-cover select-none">
             </div>
 
             <div class="h-px w-full bg-red-600 my-1"></div>

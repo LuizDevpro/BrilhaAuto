@@ -18,7 +18,6 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 
-                    <!-- Telefone -->
                     <div>
                         <label class="label block mb-1 text-sm">Telefone/WhatsApp para contato</label>
                         <input type="text" name="phone" class="input w-full py-1.5 text-sm"
@@ -26,7 +25,6 @@
                         {!! showValidationError('phone', $errors) !!}
                     </div>
 
-                    <!-- Data e Hora -->
                     <div>
                         <label class="label block mb-1 text-sm">Data e Hora</label>
                         <input type="text" id="datetime" name="datetime" class="input w-full py-1.5 text-sm"
@@ -35,7 +33,6 @@
                         {!! showValidationError('datetime', $errors) !!}
                     </div>
 
-                    <!-- Tipo do Veículo -->
                     <div>
                         <label class="label block mb-1 text-sm">Tipo do Veículo</label>
                         <select name="vehicle_type" class="input w-full py-1.5 text-sm">
@@ -49,7 +46,6 @@
                         {!! showValidationError('vehicle_type', $errors) !!}
                     </div>
 
-                    <!-- Marca -->
                     <div>
                         <label class="label block mb-1 text-sm">Marca do Veículo</label>
                         <input type="text" name="brand" class="input w-full py-1.5 text-sm"
@@ -57,7 +53,6 @@
                         {!! showValidationError('brand', $errors) !!}
                     </div>
 
-                    <!-- Modelo -->
                     <div>
                         <label class="label block mb-1 text-sm">Modelo do Veículo</label>
                         <input type="text" name="model" class="input w-full py-1.5 text-sm"
@@ -65,7 +60,6 @@
                         {!! showValidationError('model', $errors) !!}
                     </div>
 
-                    <!-- Ano -->
                     <div>
                         <label class="label block mb-1 text-sm">Ano do Veículo (Opcional)</label>
                         <select name="year" class="input w-full py-1.5 text-sm">
@@ -79,7 +73,6 @@
                         {!! showValidationError('year', $errors) !!}
                     </div>
 
-                    <!-- Cor -->
                     <div>
                         <label class="label block mb-1 text-sm">Cor do Veículo</label>
                         <input type="text" name="color" class="input w-full py-1.5 text-sm"
@@ -87,7 +80,6 @@
                         {!! showValidationError('color', $errors) !!}
                     </div>
 
-                    <!-- Placa -->
                     <div>
                         <label class="label block mb-1 text-sm">Placa do Veículo (Opcional)</label>
                         <input type="text" name="plate" class="input w-full py-1.5 text-sm"
@@ -95,7 +87,6 @@
                         {!! showValidationError('plate', $errors) !!}
                     </div>
 
-                    <!-- Serviços Adicionais -->
                     <div class="checkbox flex flex-col gap-1 text-sm" id="extrasWrapper">
                         @foreach ($service->additionalServices as $extra)
                             @php
@@ -116,17 +107,12 @@
                         @endforeach
                     </div>
 
-
-
-
-                    <!-- Observações -->
                     <div>
                         <label class="label block mb-1 text-sm">Observações (Opcional)</label>
                         <textarea name="observations" rows="3" class="input w-full py-1.5 text-sm resize-none"
                             placeholder="Ex: Carro com pelos de cachorro">{{ old('observations') }}</textarea>
                     </div>
 
-                    <!-- Forma de pagamento -->
                     <div>
                         <label class="label block mb-1 text-sm">Forma de Pagamento</label>
                         <div class="radio flex flex-wrap gap-4 text-sm">
@@ -155,7 +141,6 @@
                         {!! showValidationError('payment', $errors) !!}
                     </div>
 
-                    <!-- Busca e entrega -->
                     <div>
                         <label class="label block mb-1 text-sm">Gostaria de busca e entrega?</label>
                         <div class="radio flex gap-4 text-sm">
@@ -174,9 +159,6 @@
                         {!! showValidationError('pickup', $errors) !!}
                     </div>
 
-
-
-                    <!-- ENDEREÇO (condicional) -->
                     <div id="addressFields" class="{{ old('pickup') == '1' ? '' : 'hidden' }} contents">
 
                         <div>
@@ -265,7 +247,6 @@
 
 
     <script>
-        // Pickup
         const pickupRadios = document.querySelectorAll('input[name="pickup"]');
         const addressFields = document.querySelector('#addressFields');
 
@@ -292,9 +273,7 @@
             });
         });
 
-        
-        // datetime
-        const BASE_HOURS = ['07:00', '09:00', '13:00', '15:00'];
+        const BASE_HOURS = ['07:00', '09:00', '13:00', '15:00', '17:00'];
 
         let hourSelect = null;
         let selectedHour = null;
@@ -421,8 +400,6 @@
             return hours;
         }
 
-
-        // total price and extra prices
         const vehicleSelect = document.querySelector('[name="vehicle_type"]');
         const extrasWrapper = document.getElementById('extrasWrapper');
         const totalEl = document.getElementById('totalPrice');
@@ -439,12 +416,10 @@
             const vehicle = normalizeVehicle(vehicleSelect.value);
             let total = 0;
 
-            // BASE
             if (vehicle && window.serviceBasePrices?.[vehicle]) {
                 total += Number(window.serviceBasePrices[vehicle]);
             }
 
-            // EXTRAS
             extrasWrapper.querySelectorAll('input[type="checkbox"]').forEach(input => {
                 const prices = JSON.parse(input.dataset.prices || '{}');
                 const priceSpan = input.closest('label').querySelector('.extra-price');

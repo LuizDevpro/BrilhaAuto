@@ -159,7 +159,7 @@ class AppointmentsController extends Controller
                 ->withInput();
         }
 
-        $allowedHours = ['07:00', '09:00', '13:00', '15:00'];
+        $allowedHours = ['07:00', '09:00', '13:00', '15:00', '17:00'];
 
         if (! in_array($appointmentDate->format('H:i'), $allowedHours)) {
             return back()

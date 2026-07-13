@@ -3,8 +3,7 @@
 
         <a href="{{ auth()->check() ? auth()->user()->homeRoute() : route('home') }}">
             <div class="flex items-center">
-                <img src="{{ asset('assets/images/logo.jpg') }}" class="w-10 h-10 rounded-full me-2" alt="Logo">
-                <h3 class="text-2xl uppercase">{{ config('app.name') }}</h3>
+                <img src="{{ asset('assets/images/logo_texto_branco.png') }}" class="w-full h-10 rounded-full me-2" alt="Logo">
             </div>
         </a>    
 

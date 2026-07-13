@@ -33,7 +33,7 @@ class MainController extends Controller
             'subtitle' => 'Sobre nós',
         ];
 
-        return view('main.contact_us', $data);
+        return view('main.about_us', $data);
     }
 
     public function profile(){
