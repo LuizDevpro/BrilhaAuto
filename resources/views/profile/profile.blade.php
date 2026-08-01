@@ -4,7 +4,7 @@
         <header class="flex w-full items-center justify-between gap-4 flex-wrap">
             <h1 class="title-2">Meus Agendamentos</h1>
 
-            <a href="{{ route('home') }}" class="btn-red whitespace-nowrap">
+            <a href="{{ route('home') }}" class="btn-red whitespace-nowrap" title="Voltar">
                 <i class="fa-solid fa-arrow-left"></i> Voltar
             </a>
         </header>
@@ -45,7 +45,7 @@
                     Você ainda não tem nenhum agendamento.
                 </p>
 
-                <a href="{{ route('services') }}" class="btn-red">
+                <a href="{{ route('services') }}" class="btn-red" title="Agendar">
                     Quero Agendar <i class="fa-regular fa-paper-plane"></i>
                 </a>
             </section>

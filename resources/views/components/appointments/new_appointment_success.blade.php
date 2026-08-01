@@ -14,9 +14,9 @@
         </div>
 
         <footer class="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="{{ route('home') }}" class="btn-red w-full sm:w-auto text-center"> Voltar para o início </a>
+            <a href="{{ route('home') }}" class="btn-red w-full sm:w-auto text-center" title="Início"> Voltar para o Início </a>
 
-            <a href="{{ route('profile') }}" class="btn-red w-full sm:w-auto text-center"> Ir para o perfil</a>
+            <a href="{{ route('profile') }}" class="btn-red w-full sm:w-auto text-center" title="Perfil"> Ir para o Perfil</a>
         </footer>
     </section>
 </div>

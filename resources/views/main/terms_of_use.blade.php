@@ -4,7 +4,7 @@
     <header class="flex w-full items-center justify-between mb-8 gap-4 flex-wrap">
         <h1 class="title-2">Termos de Uso</h1>
 
-        <button onclick="history.back()" class="btn-red whitespace-nowrap">
+        <button onclick="history.back()" class="btn-red whitespace-nowrap" title="Voltar">
             <i class="fa-solid fa-arrow-left"></i> Voltar
         </button>
     </header>

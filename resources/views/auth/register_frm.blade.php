@@ -74,11 +74,11 @@
 
                         <span>
                             Declaro que li e concordo com a
-                            <a href="{{ route('privacy.policy') }}" class="text-red-500 hover:underline">
+                            <a href="{{ route('privacy.policy') }}" class="text-red-500 hover:underline" title="Política de Privacidade">
                                 Política de Privacidade
                             </a>
                             e os
-                            <a href="{{ route('terms.of.use') }}" class="text-red-500 hover:underline">
+                            <a href="{{ route('terms.of.use') }}" class="text-red-500 hover:underline" title="Termos de Uso">
                                 Termos de Uso
                             </a>.
                         </span>
@@ -88,7 +88,7 @@
                 </div>
 
                 <div class="text-center mb-1">
-                    <button type="submit" class="btn-red w-full sm:w-auto px-4 py-0.5 text-sm">
+                    <button type="submit" class="btn-red w-full sm:w-auto px-4 py-0.5 text-sm" title="Cadastre-se">
                         Cadastrar-se
                     </button>
                 </div>
@@ -98,8 +98,8 @@
             <div
                 class="flex flex-col sm:flex-row text-white text-xs text-center mt-4 justify-center items-center gap-1">
                 <p class="italic">Já tem uma conta?</p>
-                <a href="{{ route('login') }}" class="link">
-                    Entre aqui
+                <a href="{{ route('login') }}" class="link" title="Entrar">
+                    Entre Aqui
                 </a>
             </div>
 

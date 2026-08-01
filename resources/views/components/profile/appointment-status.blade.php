@@ -33,8 +33,8 @@
            class="btn-red flex items-center gap-1.5
                   whitespace-nowrap
                   px-4 py-2
-                  text-sm">
-            Ver detalhes
+                  text-sm" title="Ver Detalhes">
+            Ver Detalhes
             <i class="fa-solid fa-circle-info text-sm"></i>
         </a>
     </footer>

@@ -5,7 +5,7 @@
         <header class="flex w-full items-center justify-between mb-8 gap-4 flex-wrap">
             <h1 class="title-2">Detalhes do Agendamento #{{ $appointment->id }}</h1>
 
-            <a href="{{ route('admin.home') }}" class="btn-red whitespace-nowrap">
+            <a href="{{ route('admin.home') }}" class="btn-red whitespace-nowrap" title="Voltar">
                 <i class="fa-solid fa-arrow-left"></i> Voltar
             </a>
         </header>
@@ -50,19 +50,19 @@
 
                             <div class="pt-3">
                                 <a href="{{ route('admin.reactivate.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                    class="px-3 py-2 rounded-lg bg-yellow-600 text-white text-xs inline-flex items-center gap-1">
-                                    Reativar agendamento <i class="fa-solid fa-rotate-left"></i>
+                                    class="px-3 py-2 rounded-lg bg-yellow-600 text-white text-xs inline-flex items-center gap-1" title="Reativar Agendamento">
+                                    Reativar Agendamento <i class="fa-solid fa-rotate-left"></i>
                                 </a>
                             </div>
                         @elseif (is_null($appointment->started_at))
                             <li class="pt-3 flex gap-3 flex-wrap">
                                 <a href="{{ route('admin.cancel.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                    class="px-3 py-2 rounded-lg bg-red-600 text-white text-xs inline-flex items-center gap-1">
+                                    class="px-3 py-2 rounded-lg bg-red-600 text-white text-xs inline-flex items-center gap-1" title="Cancelar">
                                     Cancelar <i class="fa-solid fa-xmark"></i>
                                 </a>
 
                                 <a href="{{ route('admin.start.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                    class="px-3 py-2 rounded-lg bg-blue-600 text-white text-xs inline-flex items-center gap-1">
+                                    class="px-3 py-2 rounded-lg bg-blue-600 text-white text-xs inline-flex items-center gap-1" title="Começar">
                                     Começar <i class="fa-solid fa-clock"></i>
                                 </a>
                             </li>
@@ -74,13 +74,13 @@
 
                             <li class="pt-3 flex gap-3 flex-wrap">
                                 <a href="{{ route('admin.cancel.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                    class="px-3 py-2 rounded-lg bg-red-600 text-white text-xs inline-flex items-center gap-1">
+                                    class="px-3 py-2 rounded-lg bg-red-600 text-white text-xs inline-flex items-center gap-1" title="Cancelar">
                                     Cancelar <i class="fa-solid fa-xmark"></i>
                                 </a>
 
                                 <a href="{{ route('admin.finish.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                    class="px-3 py-2 rounded-lg bg-green-600 text-white text-xs inline-flex items-center gap-1">
-                                    Finalizado <i class="fa-solid fa-check"></i>
+                                    class="px-3 py-2 rounded-lg bg-green-600 text-white text-xs inline-flex items-center gap-1" title="Finalizar">
+                                    Finalizar <i class="fa-solid fa-check"></i>
                                 </a>
                             </li>
                         @else
@@ -92,7 +92,7 @@
                             @if (is_null($appointment->delivered_at))
                                 <div class="pt-3">
                                     <a href="{{ route('admin.delivered.appointment', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-                                        class="px-3 py-2 rounded-lg bg-green-600 text-white text-xs inline-flex items-center gap-1">
+                                        class="px-3 py-2 rounded-lg bg-green-600 text-white text-xs inline-flex items-center gap-1" title="Entregue">
                                         Entregue <i class="fa-solid fa-check"></i>
                                     </a>
                                 </div>
@@ -143,8 +143,8 @@
                                 {{ $appointment->responsible }}
                             @else
                                 <button id="assign_responsible_button"
-                                    class="inline-flex items-center gap-1 text-xs text-red-400 hover:text-red-500 cursor-pointer">
-                                    <i class="fa-solid fa-user-plus"></i> Atribuir responsável
+                                    class="inline-flex items-center gap-1 text-xs text-red-400 hover:text-red-500 cursor-pointer" title="Atribuir Responsável">
+                                    <i class="fa-solid fa-user-plus"></i> Atribuir Responsável
                                 </button>
                             @endif
                         </li>

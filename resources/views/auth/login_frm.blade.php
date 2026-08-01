@@ -46,13 +46,13 @@
                 </div>
 
                 <div class="text-right text-xs sm:text-sm font-light italic text-white mb-4">
-                    <a href="#" class="link">
-                        Esqueci minha senha
+                    <a href="#" class="link" title="Esqueci minha senha">
+                        Esqueci Minha Senha
                     </a>
                 </div>
 
                 <div class="text-center mb-3">
-                    <button type="submit" class="btn-red w-full sm:w-auto px-7 py-1.5 text-sm">
+                    <button type="submit" class="btn-red w-full sm:w-auto px-7 py-1.5 text-sm" title="Entrar">
                         Entrar
                     </button>
                 </div>
@@ -60,7 +60,7 @@
             </form>
 
             <div
-                class="flex flex-col sm:flex-row text-white text-sm text-center mt-2 justify-center items-center gap-1">
+                class="flex flex-col sm:flex-row text-white text-sm text-center mt-2 justify-center items-center gap-1" title="Cadastre-se">
                 <p class="italic">Ainda não tem uma conta?</p>
                 <a href="{{ route('register') }}" class="link">Cadastre-se</a>
             </div>

@@ -18,9 +18,9 @@
             </div>
 
 <footer class="flex flex-col sm:flex-row gap-3 justify-center">
-            <button onclick="window.location.reload()" class="btn-red-reverse w-full sm:w-auto text-center">Cancelar</a>
+            <button onclick="window.location.reload()" class="btn-red-reverse w-full sm:w-auto text-center" title="Cancelar">Cancelar</a>
 
-            <button type="submit" class="btn-red w-full sm:w-auto text-center">Confirmar</button>
+            <button type="submit" class="btn-red w-full sm:w-auto text-center" title="Confirmar">Confirmar</button>
         </footer>
         </form>
 

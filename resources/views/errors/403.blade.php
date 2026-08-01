@@ -17,7 +17,7 @@
             </p>
 
             <footer class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                <button onclick="history.back()" class="btn-red">
+                <button onclick="history.back()" class="btn-red" title="Voltar">
                     <i class="fa-solid fa-arrow-left"></i> Voltar
                 </button>
             </footer>

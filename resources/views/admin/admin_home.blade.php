@@ -25,7 +25,7 @@
                     </p>
 
                     <button onclick="window.location.reload()"
-                        class="text-lg text-white bg-red-700 rounded-full font-semibold px-4 py-3 hover:bg-red-800 transition cursor-pointer">
+                        class="text-lg text-white bg-red-700 rounded-full font-semibold px-4 py-3 hover:bg-red-800 transition cursor-pointer" title="Atualizar Página">
                         <i class="fa-solid fa-arrow-rotate-right"></i>
                     </button>
                 </div>
@@ -33,8 +33,8 @@
         </section>
 
         <div class="flex justify-center">
-            <button id="btn-show-all" class="btn-red flex items-center gap-2">
-                Ver todos
+            <button id="btn-show-all" class="btn-red flex items-center gap-2" title="Ver Todos">
+                Ver Todos
                 <i class="fa-solid fa-angle-down"></i>
             </button>
         </div>

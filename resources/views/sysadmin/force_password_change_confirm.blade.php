@@ -37,12 +37,12 @@
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4 pt-4">
                     <a href="{{ route('sysadmin.home') }}"
-                        class="btn-red-reverse w-full sm:w-auto flex items-center justify-center gap-2">
+                        class="btn-red-reverse w-full sm:w-auto flex items-center justify-center gap-2" title="Não">
                         Não
                         <i class="fa fa-times"></i>
                     </a>
 
-                    <button type="submit" class="btn-red w-full sm:w-auto flex items-center justify-center gap-2">
+                    <button type="submit" class="btn-red w-full sm:w-auto flex items-center justify-center gap-2" title="Alterar">
                         Alterar
                         <i class="fa fa-check"></i>
                     </button>

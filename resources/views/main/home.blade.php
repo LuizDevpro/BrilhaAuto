@@ -22,7 +22,7 @@
                 </p>
             </header>
 
-            <a href="{{ route('services') }}" class="btn-red">
+            <a href="{{ route('services') }}" class="btn-red" title="Agendar">
                 Quero Agendar
                 <i class="fa-regular fa-paper-plane"></i>
             </a>

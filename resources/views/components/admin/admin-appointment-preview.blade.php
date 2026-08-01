@@ -54,7 +54,7 @@
     <footer class="mt-4 flex justify-between items-center">
 
         <a href="{{ route('admin.appointment.details', ['appointment_id' => Crypt::encrypt($appointment->id)]) }}"
-           class="btn-red px-3 py-1.5 text-xs flex items-center gap-1">
+           class="btn-red px-3 py-1.5 text-xs flex items-center gap-1" title="Detalhes">
             Detalhes
             <i class="fa-solid fa-circle-info text-xs"></i>
         </a>

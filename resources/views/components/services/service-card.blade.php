@@ -13,8 +13,8 @@
     </section>
 
     <footer class="pt-6 flex justify-center">
-        <a href="{{ route('services.service.description', ['service_id' => Crypt::encrypt($service->id)]) }}" class="btn-red flex items-center gap-2 whitespace-nowrap px-5 py-2.5">
-            Mais informações
+        <a href="{{ route('services.service.description', ['service_id' => Crypt::encrypt($service->id)]) }}" class="btn-red flex items-center gap-2 whitespace-nowrap px-5 py-2.5" title="Mais Informações">
+            Mais Informações
             <i class="fa-solid fa-circle-info"></i>
         </a>
 

@@ -17,8 +17,8 @@
             <div class="bg-white border border-zinc-200 rounded-xl p-6 w-full">
 
                 <div class="w-full flex flex-col sm:flex-row sm:justify-end gap-3 mb-4">
-                    <a href="{{ route('sysadmin.user.create') }}" class="btn-red w-full sm:w-auto text-center">
-                        Criar novo usuário
+                    <a href="{{ route('sysadmin.user.create') }}" class="btn-red w-full sm:w-auto text-center" title="Criar Novo Usuário">
+                        Criar Novo Usuário
                     </a>
                 </div>
 

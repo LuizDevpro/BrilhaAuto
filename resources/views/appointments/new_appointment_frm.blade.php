@@ -220,12 +220,12 @@
 
                 <div class="flex flex-col md:flex-row gap-3 mt-8 w-full">
                     <a href="{{ route('services') }}"
-                        class="btn-red-reverse w-full md:w-auto md:flex-1 text-center flex items-center justify-center gap-2">
+                        class="btn-red-reverse w-full md:w-auto md:flex-1 text-center flex items-center justify-center gap-2" title="Cancelar">
                         Cancelar <i class="fa-solid fa-xmark"></i>
                     </a>
 
                     <button type="submit"
-                        class="btn-red w-full md:w-auto md:flex-1 text-sm flex items-center justify-center gap-2">
+                        class="btn-red w-full md:w-auto md:flex-1 text-sm flex items-center justify-center gap-2" title="Confirmar Agendamento">
                         Confirmar Agendamento
                     </button>
                 </div>
