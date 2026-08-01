@@ -1,8 +1,14 @@
 <x-layouts.inside-layout subtitle="{{ empty($subtitle) ? '' : $subtitle }}">
 
-    <section class="w-full flex justify-center px-4 sm:px-6 py-8 sm:py-12">
-        <article
-            class="w-full max-w-4xl bg-zinc-900/90 border border-zinc-700 rounded-2xl shadow-lg p-6 sm:p-8 lg:p-12">
+    <section class="w-full flex flex-col justify-center items-center px-3 sm:px-6 py-2 sm:py-5">
+        <header class="flex w-full items-center justify-between mb-8 gap-4 flex-wrap">
+            <h1 class="title-2">Sobre Nós</h1>
+
+            <button onclick="history.back()" class="btn-red whitespace-nowrap">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </button>
+        </header>
+        <article class="w-full max-w-4xl bg-zinc-900/90 border border-zinc-700 rounded-2xl shadow-lg p-6 sm:p-8 lg:p-12">
 
             <header class="text-center mb-8 sm:mb-10">
                 <h1 class="title-1 sm:text-4xl font-bold">
@@ -17,8 +23,7 @@
                 </p>
             </header>
 
-            <section
-                class="space-y-6 text-zinc-200 text-sm sm:text-base leading-7 sm:leading-8">
+            <section class="space-y-6 text-zinc-200 text-sm sm:text-base leading-7 sm:leading-8">
 
                 <p>
                     A <strong class="text-red">BrilhaAuto</strong> nasceu com o objetivo
@@ -53,11 +58,9 @@
                 </p>
             </section>
 
-            <section
-                class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
 
-                <article
-                    class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
+                <article class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
                     <i class="fa-solid fa-calendar-check text-3xl text-red mb-3"></i>
 
                     <h2 class="font-semibold text-white text-lg mb-2">
@@ -69,8 +72,7 @@
                     </p>
                 </article>
 
-                <article
-                    class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
+                <article class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
                     <i class="fa-solid fa-bolt text-3xl text-red mb-3"></i>
 
                     <h2 class="font-semibold text-white text-lg mb-2">
@@ -82,8 +84,7 @@
                     </p>
                 </article>
 
-                <article
-                    class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
+                <article class="bg-zinc-800/60 border border-zinc-700 rounded-xl p-5 text-center">
                     <i class="fa-solid fa-shield-halved text-3xl text-red mb-3"></i>
 
                     <h2 class="font-semibold text-white text-lg mb-2">

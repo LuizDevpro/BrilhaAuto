@@ -1,13 +1,21 @@
 <x-layouts.inside-layout subtitle="{{ empty($subtitle) ? '' : $subtitle }}">
 
-    <section class="w-full flex justify-center px-3 sm:px-6 py-6 sm:py-10">
+    <section class="w-full flex flex-col justify-center items-center px-3 sm:px-6 py-2 sm:py-5">
+        <header class="flex w-full items-center justify-between mb-8 gap-4 flex-wrap">
+            <h1 class="title-2">Contato</h1>
+
+            <button onclick="history.back()" class="btn-red whitespace-nowrap">
+                <i class="fa-solid fa-arrow-left"></i> Voltar
+            </button>
+        </header>
+
         <article
             class="w-full max-w-6xl
                    bg-zinc-900/90
                    border border-zinc-700
                    rounded-2xl
                    shadow-lg
-                   p-5 sm:p-8 lg:p-12">
+                   p-3 sm:p-6 lg:p-10">
 
             <header class="text-center mb-8 sm:mb-12">
                 <h1 class="title-1 text-2xl sm:text-3xl lg:text-4xl font-bold">
@@ -52,8 +60,8 @@
                             E-mail
                         </h2>
 
-                        <p class="text-zinc-400 break-words text-sm sm:text-base">
-                            contato@brilhaauto.com
+                        <p class="text-zinc-400 text-sm sm:text-base whitespace-nowrap">
+                            luizdev.pro@gmail.com
                         </p>
                     </div>
 
@@ -79,7 +87,7 @@
                         </h2>
 
                         <p class="text-zinc-400 text-sm sm:text-base">
-                            (35) 99999-9999
+                            (19) 98338-2653
                         </p>
                     </div>
 

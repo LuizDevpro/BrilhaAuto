@@ -5,9 +5,9 @@
         <header class="flex w-full items-center justify-between mb-8 gap-4 flex-wrap">
             <h1 class="title-2">Serviços</h1>
 
-            <a href="{{ route('home') }}" class="btn-red whitespace-nowrap">
+            <button onclick="history.back()" class="btn-red whitespace-nowrap">
                 <i class="fa-solid fa-arrow-left"></i> Voltar
-            </a>
+            </button>
         </header>
 
         <article class="w-full">
@@ -18,7 +18,7 @@
                 @endforeach
 
             </div>
-            </article>
+        </article>
 
     </section>
 
