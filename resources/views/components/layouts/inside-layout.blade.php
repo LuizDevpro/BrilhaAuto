@@ -46,6 +46,10 @@
         {{ $slot }}
     </main>
 
+    @can('guest-or-client')
+        <x-layouts.footer />
+    @endcan
+
 </body>
 
 </html>
