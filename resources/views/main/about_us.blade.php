@@ -5,7 +5,7 @@
             class="w-full max-w-4xl bg-zinc-900/90 border border-zinc-700 rounded-2xl shadow-lg p-6 sm:p-8 lg:p-12">
 
             <header class="text-center mb-8 sm:mb-10">
-                <h1 class="title-1 text-3xl sm:text-4xl font-bold">
+                <h1 class="title-1 sm:text-4xl font-bold">
                     Sobre Nós
                 </h1>
 

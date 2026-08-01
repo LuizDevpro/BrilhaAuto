@@ -16,7 +16,7 @@
 
 </head>
 
-<body class="bg-gray-950 h-screen overflow-hidden">
+<body class="bg-gray-950 h-screen">
 
     <div class="p-4">
 

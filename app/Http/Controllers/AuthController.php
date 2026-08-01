@@ -27,6 +27,7 @@ class AuthController extends Controller
                 'name_surname' => 'required|min:5|max:150',
                 'email' => 'required|email|max:150|unique:users,email',
                 'password' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,16}$/|confirmed',
+                'privacy_and_terms' => 'accepted',
 
             ],
             [
@@ -40,6 +41,7 @@ class AuthController extends Controller
                 'password.required' => 'A senha é obrigatória.',
                 'password.regex' => 'A senha deve ter entre 6 e 16 caracteres, incluindo uma letra maiúscula, uma minúscula e um número.',
                 'password.confirmed' => 'A senha deve ser confirmada.',
+                'privacy_and_terms.accepted' => 'Você deve aceitar a Política de Privacidade e os Termos de Uso.'
             ]
         );
 

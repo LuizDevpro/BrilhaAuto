@@ -83,4 +83,22 @@ class MainController extends Controller
 
         return view('appointments.client_appointment_details', $data);
     }
+
+    public function privacyPolicy(){
+
+        $data = [
+            'subtitle' => "Política de Privacidade"
+        ];
+
+        return view('main.privacy_policy', $data);
+    }
+
+    public function termsOfUse(){
+
+        $data = [
+            'subtitle' => "Termos de Uso"
+        ];
+
+        return view('main.terms_of_use', $data);
+    }
 }
