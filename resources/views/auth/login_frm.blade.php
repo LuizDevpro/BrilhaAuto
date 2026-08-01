@@ -46,7 +46,7 @@
                 </div>
 
                 <div class="text-right text-xs sm:text-sm font-light italic text-white mb-4">
-                    <a href="#" class="link" title="Esqueci minha senha">
+                    <a href="{{ route('recover.password') }}" class="link" title="Esqueci minha senha">
                         Esqueci Minha Senha
                     </a>
                 </div>

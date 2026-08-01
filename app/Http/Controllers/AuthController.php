@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\PasswordRecoveryEmail;
+use Illuminate\Support\Facades\Crypt;
 
 class AuthController extends Controller
 {
@@ -135,5 +139,119 @@ class AuthController extends Controller
 
     }
 
+    public function recoverPassword()
+    {
+        $data = [
+            'subtitle' => 'Recuperar Senha',
+        ];
+
+        return view('auth.recover_password_frm', $data);
+    }
+
+    public function recoverPasswordSubmit(Request $request)
+    {
+        $request->validate(
+            [
+                'username' => 'required|email'
+            ],
+            [
+                'username.required' => 'O e-mail do usuário é obrigatório.',
+                'username.email' => 'O e-mail  do usuário deve ser um endereço válido.'
+            ]
+        );
+
+        $user = User::where('email', trim($request->username))
+            ->where('active', 1)
+            ->whereNull('deleted_at')
+            ->where(function($query) {
+                $query->whereNull('blocked_until')
+                    ->orWhere('blocked_until', '<', now());
+            })->first();
+
+        if(!$user) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('server_error', 'O seu pedido não é válido.');
+        }
+
+        $code = Str::random(64);
+
+        try {
+            Mail::to($request->username)->send(new PasswordRecoveryEmail($code));
+        } catch (\Exception $e) {
+            return redirect()
+                ->back()
+                ->withInput()
+                ->with('server_error', 'O seu pedido não é válido.');
+        }
+
+        $user->code = $code;
+        $user->code_expiration = now()->addMinutes(config('constants.MAIL_NEW_CLIENT_CODE_EXPIRATION'));
+        $user->save();
+
+        $data = [
+            'subtitle' => 'Email enviado',
+            'email' => $request->username
+        ];
+
+        return view('auth.recover_password_email_sent', $data);
+    }
+
+    public function recoverPasswordDefineNew($code)
+    {
+        try {
+            $code = Crypt::decrypt($code);
+        } catch(\Exception $e){
+            return redirect()->route('login');
+        }
+
+        $user = User::where('code', $code)
+            ->where('code_expiration', '>', now())
+            ->first();
+
+        if(!$user) {
+            return redirect()->route('login');
+        }
+
+        $data = [
+            'subtitle' => 'Definir nova senha',
+            'user' => $user
+        ];
+
+        return view('auth.recover_password_define_new_frm', $data);
+    }
+
+    public function recoverPasswordDefineNewSubmit(Request $request)
+    {
+        $request->validate(
+            [
+                'password' => 'required|regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{6,16}$/|confirmed'
+            ],
+            [
+                'password.required' => 'A senha é obrigatória.',
+                'password.regex' => 'A senha deve conter entre 6 e 16 caracteres, ter uma maiúscula, uma minúscula e um algarismo.',
+                'password.confirmed' => 'A nova senha e a sua repetição não são iguais.'
+            ]
+        );
+
+        try {
+            $user_id = Crypt::decrypt($request->user_id);
+        } catch(\Exception $e){
+            return redirect()->route('login');
+        }
+
+        $user = User::find($user_id);
+        if(!$user) {
+            return redirect()->route('login');
+        }
+
+        $user->password = bcrypt($request->password);
+        $user->code = null;
+        $user->code_expiration = null;
+        $user->save();
+
+        return redirect()->route('login');
+    }
     
 }
