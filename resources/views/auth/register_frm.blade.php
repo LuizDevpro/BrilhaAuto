@@ -67,6 +67,26 @@
                     </div>
                 </div>
 
+                <div class="mb-4">
+                    <label for="privacy_and_terms"
+                        class="flex items-start gap-2 text-xs text-white leading-5 cursor-pointer">
+                        <input type="checkbox" name="privacy_and_terms" id="privacy_and_terms" class="mt-1 shrink-0" {{ old('privacy_and_terms') ? 'checked' : '' }}>
+
+                        <span>
+                            Declaro que li e concordo com a
+                            <a href="{{ route('privacy.policy') }}" class="text-red-500 hover:underline">
+                                Política de Privacidade
+                            </a>
+                            e os
+                            <a href="{{ route('terms.of.use') }}" class="text-red-500 hover:underline">
+                                Termos de Uso
+                            </a>.
+                        </span>
+                    </label>
+
+                    {!! showValidationError('privacy_and_terms', $errors) !!}
+                </div>
+
                 <div class="text-center mb-1">
                     <button type="submit" class="btn-red w-full sm:w-auto px-4 py-0.5 text-sm">
                         Cadastrar-se
@@ -75,7 +95,8 @@
 
             </form>
 
-            <div class="flex flex-col sm:flex-row text-white text-xs text-center mt-1 justify-center items-center gap-1">
+            <div
+                class="flex flex-col sm:flex-row text-white text-xs text-center mt-4 justify-center items-center gap-1">
                 <p class="italic">Já tem uma conta?</p>
                 <a href="{{ route('login') }}" class="link">
                     Entre aqui

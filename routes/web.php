@@ -20,6 +20,9 @@ Route::middleware(['can:guest-or-client'])->group(function() {
     Route::get('/services', [ServicesController::class, 'index'])->name('services');
     Route::get('/services/service-description/{service_id}', [ServicesController::class, 'serviceDescription'])->name('services.service.description');
 
+    Route::get('/privacy-policy', [MainController::class, 'privacyPolicy'])->name('privacy.policy');
+    Route::get('/terms-of-use', [MainController::class, 'termsOfUse'])->name('terms.of.use');
+
 });
 
 // auth only for clients routes
@@ -87,6 +90,4 @@ Route::middleware(['auth', 'can:sys-admin'])->group(function() {
     Route::get('/sys-admin/user/restore/{id}', [SysAdminController::class, 'restoreUser'])->name('sysadmin.user.restore');
     
     
-
-
 });
