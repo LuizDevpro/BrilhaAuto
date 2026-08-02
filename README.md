@@ -107,7 +107,7 @@ Este projeto foi desenvolvido para praticar conceitos como:
 
 ## Demonstração
 
-Link da aplicação: **Em breve**
+Link da aplicação: https://brilhaauto.oluizdev.com.br/
 
 ## Autor
 
